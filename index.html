@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .colorbox {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding: 20%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: Black;
+      }
+    </style>
+    <script>
+      function greet() {
+        const name = document.querySelector(".nameInput").value;
+        document.querySelector(".headerTitle").innerText = "Hello , " + name;
+      }
+      function colorChange(color) {
+        const colorBox = document.querySelector("#" + color);
+        colorBox.style.backgroundColor = color;
+        colorBox.style.color = "white";
+      }
+    </script>
+  </head>
+  <body>
+    <header
+      style="
+        background-color: rgb(204, 201, 201);
+        font-size: 5vh;
+        margin: -7px;
+        text-align: center;
+      "
+      class="headerTitle"
+    >
+      Hello
+    </header>
+    <main
+      style="
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="gap: 2%">
+        <div
+          style="
+            display: flex;
+            gap: 20%;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div
+            class="colorbox"
+            id="red"
+            style="background-color: grey"
+            onclick="colorChange('red')"
+          >
+            Red
+          </div>
+          <div
+            class="colorbox"
+            id="blue"
+            style="background-color: grey"
+            onclick="colorChange('blue')"
+          >
+            Blue
+          </div>
+          <div
+            class="colorbox"
+            id="green"
+            style="background-color: grey"
+            onclick="colorChange('green')"
+          >
+            Green
+          </div>
+          <div
+            class="colorbox"
+            id="yellow"
+            style="background-color: grey"
+            onclick="colorChange('yellow')"
+          >
+            Yellow
+          </div>
+        </div>
+        <div style="display: flex; justify-content: center; margin-top: 5%">
+          <input type="text" class="nameInput" placeholder="Enter your name" />
+          <input type="button" value="Greet" onclick="greet()" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
